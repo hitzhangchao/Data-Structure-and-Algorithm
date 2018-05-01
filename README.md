@@ -1,2 +1,2 @@
 # Data-Structure-and-Algorithm
-Practice of my DSA course.
+Simple ractice of my DSA course.
