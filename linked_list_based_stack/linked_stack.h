@@ -37,6 +37,14 @@ public:
 		T a = head->data;
 		head = head->next;
 		return a;
+		
+		//用中间量p置换的方法也可以
+		//p = new Node;
+		//p->data = head->next->data;
+		//p->next = head->next->next;
+		//head = p;
+		//p = NULL;
+		//return a;
 	}
 
 	/*读取栈顶元素*/
