@@ -57,13 +57,13 @@ int main()
 	cout << head->data << " ->";
 	cout << head->next->data << " ->";
 	cout << head->next->next->data << " ->";
-	cout << head->next->next->next->data <<" ->";    //顺序输出各节点data
+	cout << head->next->next->next->data <<" ->"; 
 	cout << head->next->next->next->next->data << endl;    //顺序输出各节点data
 
 	cout << tail->data << "<- ";
 	cout << tail->pre->data << "<- ";
 	cout << tail->pre->pre->data << "<- ";
-	cout << tail->pre->pre->pre->data << "<- ";    //逆序输出各节点data
+	cout << tail->pre->pre->pre->data << "<- "; 
 	cout << tail->pre->pre->pre->pre->data << endl;    //逆序输出各节点data
 
 	/*双链表删除节点*/
