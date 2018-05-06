@@ -23,20 +23,17 @@ BinarySearchTree *CreateBiTree()
 }
 
 /*删除树*/
-void DeleteTree(BinarySearchTree* tree)
+void DeleteTree(BinarySearchTree* tree)    //用后序遍历的方法删除树
 {
 	if (tree)
 	{
 		DeleteTree(tree->leftChild);
 		DeleteTree(tree->rightChild);
-
 		cout << "Delete : " << tree->data << endl;
 
 		delete tree;
 		tree = NULL;
 	}
-
-
 
 }
 
@@ -109,20 +106,13 @@ void Remove(BinarySearchTree * &tree, int data)  //同样的*&，引用传递的
 
 	else if (tree->leftChild && tree->rightChild)  //判断当前节点是否左右孩子都有。当data = tree->data,即找到时需要移除的点时，执行这句。
 	{
-		tree->data = findMin(tree->rightChild);
-
-
+		tree->data = findMin(tree->rightChild);    //右子树中找到最小值
 		Remove(tree->rightChild, tree->data);
 	}
 
-	else
-	{
-		//BinarySearchTree *node = tree;
+	else        //只有一个孩子的情况
 		tree = (tree->leftChild) ? tree->leftChild : tree->rightChild; //判断是否有左孩子，若有则把tree->leftChild赋给tree;
 		                                                               //若无，则把tree->leftChild赋给tree
-		//delete node;
-		//node = NULL;
-	}
 }
 
 /*寻找最小元素*/
@@ -146,4 +136,5 @@ int findMax(BinarySearchTree *tree)  //很明显，对于BST，最大元素在�
 	else
 		return findMax(tree->rightChild);  //递归
 }
+
 
