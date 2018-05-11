@@ -1,0 +1,37 @@
+/*伪代码
+Unweighted Shortest Path：BSF
+过程：
+              初始
+	v    known    dv    pv
+	----------------------
+	v1     F      0     0
+	v2     F     INF    0
+	v3     F     INF    0
+	v4     F     INF    0
+	v5     F     INF    0
+	v6     F     INF    0
+	v7     F     INF    0
+	Queue: v1
+	----------------------
+    
+*/
+void Graph::unweighted(Vertex s)
+{
+	Queue<Vertex> q;
+	for each Vertex v
+		v.dist = INFINITY;
+	s.dist = 0;
+	q.enqueue(s);
+	
+	while (!= q.empty)
+	{
+		Vertex v = q.dequeue();
+		for each Vertex w adjacent to v
+			if(w.dist=INFINITY)
+			{
+				W.dist =v.dist +1;
+				w.path = v;
+				q.enqueue(w);
+			}
+	}
+}
